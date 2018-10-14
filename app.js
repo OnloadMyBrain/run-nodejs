@@ -5,7 +5,7 @@ const fs = require('fs');
 const ejs = require('ejs');
 
 http.createServer(function(request, response){
-  fs.readFile('ejs.ejs', function(error,data){
+  fs.readFile('ejs.ejs', 'utf-8', function(error,data){
     response.writeHead(200, {'Content-type':'text/html'});
     response.end(ejs.render(data));
   });
