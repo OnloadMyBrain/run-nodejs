@@ -31,7 +31,7 @@ http.createServer(function(request,response){
         response.writeHead(200, {'Content-type':'text/html'});
         response.end(data);
       });
-    }else if(request.mothod == 'POST'){
+    }else if(request.method == 'POST'){
       // POST
       request.on('data', function(data){
         response.writeHead(200, {'Contet-Tpye':'text/html'});
