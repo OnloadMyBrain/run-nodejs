@@ -26,12 +26,17 @@ http.createServer(function(request,response){
 //   console.log('Server running...');
     if(request.method == 'GET'){
       // GET
-      var query = url.parse(request.url, true).query;
-
-      response.writeHead(200, {'Content-type':'text/html'});
-      response.end('<h1>' + JSON.stringify(query) + '</h1>');
+      // var query = url.parse(request.url, true).query;
+      fs.readFile('index.html', function(error,data){
+        response.writeHead(200, {'Content-type':'text/html'});
+        response.end(data);
+      });
     }else if(request.mothod == 'POST'){
       // POST
+      request.on('data', function(data){
+        response.writeHead(200, {'Contet-Tpye':'text/html'});
+        response.end('<h1>'+ data +'</h1>');
+      });
     }
   }).listen(3000, function(){
   console.log('Server running...');
