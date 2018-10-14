@@ -8,7 +8,7 @@ http.createServer(function(request, response){
   fs.readFile('ejs.ejs', function(error,data){
     response.writeHead(200, {'Content-type':'text/html'});
     response.end(ejs.render(data));
-  }).listen(3000, function(){
-    console.log('Server running...');
   });
+}).listen(3000, function(){
+  console.log('Server running...');
 });
