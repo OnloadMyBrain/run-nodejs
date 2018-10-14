@@ -26,7 +26,7 @@ http.createServer(function(request,response){
 //   console.log('Server running...');
     if(request.method == 'GET'){
       // GET
-      var query = url.parse(request.url, ture).query;
+      var query = url.parse(request.url, true).query;
 
       response.writeHead(200, {'Content-type':'text/html'});
       response.end('<h1>'.JSON.stringfy(query) + '</h1>');
