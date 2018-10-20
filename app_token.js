@@ -10,16 +10,11 @@ var app = express(); // create server
 app.use(morgan('tiny'));
 app.use(serveStatic(path.join(__dirname, 'public')));
 
-app.get('/a', function(request, response){
-  response.send('<a href="/b">Go to B</a>');
-});
+app.get('/name/:id', function(request, response){
+  var name = request.param('id');
+  // DB
 
-app.get('/b', function(request, response){
-  response.send('<a href="/a">Go to A</a>');
-});
-
-app.get('/',function(request, response){
-  response.send('<h1><img src="img_npm.png" alt=""></h1>');
+  response.send('<h1>' + name + '</h1>');
 });
 
 http.createServer(app).listen(3000, function(){
