@@ -5,13 +5,11 @@ var express = require('express');
 var app = express(); // create server
 
 app.use(function(request, response){
-  var agent = request.header('User-Agent');
-  // User Agent 체크
-  if(agent.toLowerCase().match(/chrome/)){
-    response.send('<h1>Hello Chrome!</h1>');
-  }else{
-    response.send('<h1>Hello Express!</h1>')
-  }
+  var name = request.param('name');
+  var region = request.param('region');
+
+  response.send('<h1>'+name+'and'+region+'</h1>');
+  
 });
 
 http.createServer(app).listen(3000, function(){
