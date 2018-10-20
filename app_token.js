@@ -17,6 +17,10 @@ app.get('/name/:id', function(request, response){
   response.send('<h1>' + name + '</h1>');
 });
 
+app.get('*', function(request, response){
+  response.send(404, '<h1>ERROR !!</h1>')
+});
+
 http.createServer(app).listen(3000, function(){
   console.log('Server running....');
 });
