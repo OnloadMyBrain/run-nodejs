@@ -1,17 +1,14 @@
 // 모듈 추출 http, fs, url
-const http = require('http');
-const fs = require('fs');
-// const url = require('url');
-const ejs = require('ejs');
+var http = require('http');
+var express = require('express');
 
-http.createServer(function(request, response){
-  fs.readFile('ejs.ejs', 'utf-8', function(error,data){
-    response.writeHead(200, {'Content-type':'text/html'});
-    response.end(ejs.render(data,{
-      "name":"son",
-      "address" : "Jamsil-dong"
-    }));
-  });
-}).listen(3000, function(){
-  console.log('Server running...');
+var app = express(); // create server
+
+app.use(function(request, response){
+  response.writeHead(200, {'Content-Type': 'text/html'});
+  response.end('<h1>Hello Express</h1>');
+});
+
+http.createServer(app).listen(3000, function(){
+  console.log('Server running....');
 });
