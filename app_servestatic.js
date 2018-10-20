@@ -1,7 +1,7 @@
 // 모듈 추출 http, fs, url
 var http = require('http');
 var express = require('express');
-var express = require('morgan');
+var morgan = require('morgan');
 var serveStatic = require('serve-static');
 
 var app = express(); // create server
