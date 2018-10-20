@@ -1,10 +1,11 @@
 // 모듈 추출 http, fs, url
 var http = require('http');
 var express = require('express');
+var morgan = require('morgan');
 
 var app = express(); // create server
 
-app.use(express.logger(':method + :date'));
+app.use(morgan('tiny'));
 app.use(function(request, response){
   response.send('<h1>hello Express..</h1>');
 });
