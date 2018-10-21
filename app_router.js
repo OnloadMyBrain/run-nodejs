@@ -19,7 +19,7 @@ app.get('/b', function(request, response){
 });
 // testing
 app.get('/c', function(request, response){
-  res.sendFile(path.join(__dirname+'/test.html'));
+  response.sendFile(path.join(__dirname+'/test.html'));
 });
 
 app.get('/',function(request, response){
