@@ -17,6 +17,12 @@ app.get('/a', function(request, response){
 app.get('/b', function(request, response){
   response.send('<a href="/a">Go to A</a>');
 });
+// testing
+app.get('/c', function(request, response){
+  response.send('/test.html');
+  response.send('<a href="/a">Go to A</a>');
+  response.send('<a href="/b">Go to B</a>');
+});
 
 app.get('/',function(request, response){
   response.send('<h1><img src="img_npm.png" alt=""></h1>');
