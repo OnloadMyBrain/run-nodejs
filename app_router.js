@@ -17,9 +17,9 @@ app.get('/a', function(request, response){
 app.get('/b', function(request, response){
   response.send('<a href="/a">Go to A</a>');
 });
-// testing
+// render file page
 app.get('/c', function(request, response){
-  response.sendFile(path.join('/test.html'));
+  response.sendFile(path.join(__dirname+'/test.html'));
 });
 
 app.get('/',function(request, response){
