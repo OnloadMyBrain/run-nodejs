@@ -1,11 +1,11 @@
 module.exports=(sequelize, DataTypes) => {
-    return sequelize.define('users', {
-        name:{
-            type:DataTypes.STRING(20),
-            allowNull:false,
-            unique:true,
-        },
-        age:{
+		return sequelize.define('users', {
+				name:{
+						type:DataTypes.STRING(20),
+						allowNull:false,
+						unique:true,
+				},
+				age:{
 			type:DataTypes.INTEGER.UNSIGNED,
 			allowNull:false,
 		},
@@ -22,7 +22,7 @@ module.exports=(sequelize, DataTypes) => {
 			allowNull:false,
 			defaultValue:sequelize.literal('now()'),
 		}
-    },{
+		},{
 		timestamps:false,
 	})
 }

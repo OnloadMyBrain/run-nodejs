@@ -1,5 +1,5 @@
 module.exports=(sequelize, DataTypes) => {
-    return sequelize.define('comment', {   
+		return sequelize.define('comment', {
 		comment:{
 			type:DataTypes.TEXT,
 			allowNull:false,
@@ -9,7 +9,7 @@ module.exports=(sequelize, DataTypes) => {
 			allowNull:false,
 			defaultValue:sequelize.literal('now()'),
 		}
-    },{
-        timestamps:false,
-    })
+		},{
+				timestamps:false,
+		})
 }
